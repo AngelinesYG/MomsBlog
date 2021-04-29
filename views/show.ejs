@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+      <link rel="stylesheet" href="/CSS/app.css">
+      <title></title>
+      <style>
+        ul { list-style: none;}
+        body {background: aqua;}
+        img {width: 400px; height: auto;}
+      </style>
+   </head>
+   <body>
+      <h1>Blogs Show Page</h1>
+
+      <nav>
+         <a href="/momblog/index">Back to Blogs</a>
+      </nav>
+         <ul>
+            <li><%=momblog.img%></li>
+            <li><h2><%=momblog.title%></h2></li>
+            <li> By: <h5><%=momblog.author%></h5></li>
+            <li><%=momblog.blog%></li>
+         </ul>
+   </body>
+</html>
