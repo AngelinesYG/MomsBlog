@@ -86,9 +86,9 @@ app.get('/momblog/new', (req, res)=>{
    res.render('new.ejs')
 })
 
-////CREATE/////(create and post new blog)
+////CREATE/////(create and posts new blog)
 app.post('/momblog/index', (req, res)=>{
-   Momblog.create(req.body, (err, allMomblogs)=>{
+   Momblog.create(req.body, (err, momblog)=>{
       res.redirect('/momblog/index')
    })
 })
@@ -126,8 +126,9 @@ app.get('/momblog/:id', (req, res)=>{
 })
 
 /////DELETE////
-app.delete('/index/:id', (req, res)=>{
-   Momlog.findByIdAndRemove(req.params.id, (err, momblog)=>{
+app.delete('/momblog/:id', (req, res)=>{
+   Momblog.findByIdAndRemove(req.params.id,
+      (err, momblog)=>{
       res.redirect('/momblog/index')
    })
 })
