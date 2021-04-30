@@ -52,19 +52,19 @@ app.set('veiw engine', 'ejs')
 // app.get('/' , (req, res) => {
 //   res.send('Hello World!');
 // });
-const momblogSeed = require('./models/momblogSeed.js')
-
-const Momblog = require('./models/momblog.js')
-   // Momblog.create(momblogSeed,
-   //    (err, allMomblogs) =>{
-   //       if (err){
-   //          console.log(err)
-   //       } else {
-   //          console.log(allMomblogs)
-   //       }
-         // res.redirect('/momblog')
-   //    }
-   // )
+//  const momblogSeed = require('./models/momblogSeed.js')
+//
+// const Momblog = require('./models/momblog.js')
+//    Momblog.create(momblogSeed,
+//       (err, allMomblogs) =>{
+//          if (err){
+//             console.log(err)
+//          } else {
+//             console.log(allMomblogs)
+//          }
+//          res.redirect('/momblog')
+//       }
+//    )
 
    const momblogController = require('./controllers/contMomblog.js')
    app.use('/momblog', momblogController)

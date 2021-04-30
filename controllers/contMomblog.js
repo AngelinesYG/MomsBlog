@@ -1,7 +1,9 @@
 const express = require('express')
 const Momblog = require('../models/momblog.js')
+const momblogSeed = require('../models/momblogSeed.js')
+// const qaSeed = require ('./models/qaSeed.js')
+const qa = require ('../models/qa.js')
 const router = express.Router()
-
 
 
 
@@ -15,16 +17,18 @@ router.get('/', (req, res)=>{
    })
 })
 
-///Q-A PAGE///
-router.get('/qa', (req, res)=>{
-   Momblog.find({}, (err, foundMomblog) =>{
-      res.render('qa.ejs',
-         {
-            momblog:foundMomblog
+//MOMBLOG CREATE SEED///
+router.get('/seed', (req, res)=>{
+   Momblog.create(momblogSeed,
+      (err, allMomblogs) =>{
+         if (err){
+            console.log(err)
+         } else {
+            console.log(allMomblogs)
          }
-      );
-
-   });
+         res.redirect('/momblog')
+     }
+   )
 })
 
 ///INDEX//////
@@ -38,18 +42,6 @@ router.get('/index', (req, res)=>{
 
    });
 })
-
-// ///Q-A PAGE///
-// router.get('/qa', (req, res)=>{
-//    Momblog.find({}, (err, foundMomblog) =>{
-//       res.render('qa.ejs',
-//          {
-//             momblog:foundMomblog
-//          }
-//       );
-//
-//    });
-// })
 
 /////NEW//////(start new blog)
 router.get('/new', (req, res)=>{
@@ -80,6 +72,16 @@ router.put('/:id', (req, res)=>{
    req.body, (err, momblog)=>{
       res.redirect('/momblog/index')
    })
+})
+
+////// Q-A //////////
+router.get('/qa', (req, res)=>{
+   res.render(
+      'qa.ejs',
+      {
+         qa: qa
+      }
+   )
 })
 
 ////SHOW//////

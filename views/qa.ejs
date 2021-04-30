@@ -5,6 +5,15 @@
       <title></title>
    </head>
    <body>
-      <h1>Question/Answers Page</h1>
+      <h1>Frequenly Asked Questions</h1>
+
+      <% for(let i = 0; i < qa.length; i++){ %>
+         <h4><%=qa[i].question%></h4>
+         <p><%= qa[i].answer%><p>
+         <br/>
+      <% } %>
+      <a href="/momblog/index">See Our Blogs</a>
+      <a href="/momblog/new">Create New Blog</a>
+      <a href="/momblog">Home Page</a>
    </body>
 </html>
