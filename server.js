@@ -4,9 +4,14 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+
+//____________________
+//Configuration
+//____________________
+require('dotenv').config()
 const app = express ();
 const db = mongoose.connection;
-require('dotenv').config()
+
 //___________________
 //Port
 //___________________
@@ -20,7 +25,10 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+mongoose.connect(MONGODB_URI , {
+   useNewUrlParser: true,
+   useUnifiedTopology: true,
+   useFindAndModify: false }
 );
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -58,80 +66,13 @@ const Momblog = require('./models/momblog.js')
    //    }
    // )
 
-///HOME/////
-app.get('/momblog', (req, res)=>{
-   Momblog.find({}, (err, allMomblogs) =>{
-      res.render('home.ejs',
-      {
-         momblogs: allMomblogs
-      });
+   const momblogController = require('./controllers/contMomblog.js')
+   app.use('/momblog', momblogController)
+
+   app.get('/', (req, res)=>{
+      res.redirect('/momblog')
    })
-})
 
-
-///INDEX//////
-app.get('/momblog/index', (req, res)=>{
-   Momblog.find({}, (err, allMomblogs) =>{
-      res.render('index.ejs',
-         {
-            momblogs:allMomblogs
-         }
-      );
-
-   });
-})
-
-/////NEW//////(start new blog)
-app.get('/momblog/new', (req, res)=>{
-   res.render('new.ejs')
-})
-
-////CREATE/////(create and posts new blog)
-app.post('/momblog/index', (req, res)=>{
-   Momblog.create(req.body, (err, momblog)=>{
-      res.redirect('/momblog/index')
-   })
-})
-
-/////EDIT Prt-1 (get blog)/////
-app.get('/momblog/:id/edit', (req, res)=>{
-   Momblog.findById(req.params.id,
-      (err, foundMomblog)=>{
-      res.render('edit.ejs',
-         {
-            momblog:foundMomblog
-         }
-      )
-   })
-})
-/////EDIT Prt-2 (post edited blog)//////
-app.put('/momblog/:id', (req, res)=>{
-   Momblog.findByIdAndUpdate(req.params.id,
-   req.body, (err, momblog)=>{
-      res.redirect('/momblog/index')
-   })
-})
-
-////SHOW//////
-app.get('/momblog/:id', (req, res)=>{
-   Momblog.findById(req.params.id,
-      (err, foundMomblog)=>{
-      res.render(
-         'show.ejs',
-         {
-            momblog:foundMomblog
-         }
-      )
-   })
-})
-
-/////DELETE////
-app.delete('/momblog/:id', (req, res)=>{
-   Momblog.findByIdAndRemove(req.params.id,
-      (err, momblog)=>{
-      res.redirect('/momblog/index')
-   })
-})
 
 // app.get('/', (req, res)=>{
 //    res.send('hello world')
