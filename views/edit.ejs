@@ -6,23 +6,38 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
       <link rel="stylesheet" href="/CSS/app.css">
       <title></title>
+      <style>
+         .module { position: relative}
+         body {
+            font-weight: bolder;
+            text-emphasis-color: red;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdcDbdgW1qUztMK5XfOLdPGLAZR5uhkKzAA&usqp=CAU')}
+         body img{
+            opacity: 0.3
+         }
+
+      </style>
    </head>
    <body>
-      <h1>Edit Your Blog</h1>
-      <form action="/momblog/index<%=momblog.id%>?_method=PUT" method="POST">
-         <lable for="image"></lable>
-         Image: <input type="text" name="img" value"<%=momblog.img%>/><br/>
-         <lable for="title">Title:</lable>
-          <input type="text" name"title" value"<%=momblog.title%>/>
-          <br/>
-          <lable for="title">Author:</lable>
-          <input type="text" name"author" value"<%=momblog.author%>/>
-         <br/>
-         <lable for="Blog">Blog Excerpt:</lable>
-         <input type="text" name"Blog" value"<%=momblog.blog%>/>
-        <br/>
-         <input type="submit" value="Submit Changes"/>
-      </form>
+      <div class="module">
+         <div class="module-inside">
+            <h1>Edit Your Blog</h1>
+            <form action="/momblog/<%=momblog.id%>?_method=PUT" method="POST">
+
+               Image: <input type="text" name="img" value="<%=momblog.img%>"/><br/>
+
+                Name: <input type="text" name="title" value="<%=momblog.title%>"/>
+                <br/>
+
+                Author: <input type="text" name="author" value="<%=momblog.author%>"/>
+               <br/>
+
+               Blog Excerpt: <input type="text" name="Blog" value="<%=momblog.blog%>"/>
+              <br/>
+               <input type="submit" value="Submit Changes"/>
+            </form>
+         </div>
+   </div>
       <a href="/momblog/index">Back to Blogs</a>
       <br/>
       <a href="/momblog">Home Page</a>

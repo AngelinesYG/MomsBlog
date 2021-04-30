@@ -68,8 +68,11 @@ router.get('/:id/edit', (req, res)=>{
 })
 /////EDIT Prt-2 (post edited blog)//////
 router.put('/:id', (req, res)=>{
-   Momblog.findByIdAndUpdate(req.params.id,
-   req.body, (err, momblog)=>{
+   Momblog.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new: true},
+      (err, updatedMomblog)=>{
       res.redirect('/momblog/index')
    })
 })
