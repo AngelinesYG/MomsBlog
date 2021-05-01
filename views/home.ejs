@@ -4,14 +4,30 @@
       <meta charset="utf-8">
       <title></title>
       <style>
-         h1 {text-align: center}
-         img {max-width: 400px}
-         ul {list-style: none;
-             position: relative;
-             background: lightgrey;
-             border: 2px; solid black;
-             border-radius: 5px;
-             padding: 45px;}
+      body { display: flex;
+         position: relative;}
+         .header {display: flex;
+            align-self: center;}
+         img {max-width: 500px;
+            display: flex;
+            align-self: center;
+            }
+         ul {list-style: none;}
+         .inner-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background: lightgrey;
+            border: 2px solid black;
+            border-radius: 1em;}
+         .resources {background: lightblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border: 2px solid red;
+            border-radius: 1em}
+
          body {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdjqD1bqQx7kh9GuJ5fz55L1fNaJ8e4O_Z1A&usqp=CAU');
          max-width: 500px}
       </style>
@@ -19,19 +35,29 @@
    <body>
 
       <ul>
-         <h1>Welcome To Mom's Blog</h1>
-         <img src="https://image.shutterstock.com/image-vector/happy-mother-day-card-continuous-600w-1356350777.jpg"/>
+         <div class='header'>
+            <h1>Welcome To Mom's Blog</h1>
+         </div>
+         <div class='image'>
+            <img src="https://image.shutterstock.com/image-vector/happy-mother-day-card-continuous-600w-1356350777.jpg"/>
+         </div>
+
+         <div class='inner-links'>
             <li><img src="<%=momblogs.img%>"/>
-            <a href ="/momblog<%=momblogs.title%>/index">Our Blogs</a>
-         </li><br/>
+            <h3><a href ="/momblog<%=momblogs.title%>/index">OurBlogs</a></h3>
+            </li><br/>
             <li>
-            <a href="momblog/qa">Questions and Answers Page</a>
-         </li><br/>
-         <li>Resources</li><br/>
-         <li><a href="https://www.workingmomsagainstguilt.com/working-mom-resources/">Working Moms Against Guilt</li>
-         <li><a href="https://www.fabworkingmomlife.com/working-mom-life-resources/">Fabulous Working Mom Life</li>
-         <li><a href="https://www.mother.ly/work/find-your-group-10-mom-groups-that-are-totally-amazing">Top 10 Mom Support Groups</li>
-         <li><a href="https://mommypoppins.com/anywhere">Mom Meeting Moms - Find a Group in Your Area</li>
+            <h3><a href="momblog/qa">Frequently Asked Questions</a></h3>
+         </li></h3><br/>
+         </div>
+
+         <div class='resources'>
+            <li><h2>Resources</h2></li><br/>
+            <li><a href="https://www.workingmomsagainstguilt.com/working-mom-resources/">Working Moms Against Guilt</li>
+            <li><a href="https://www.fabworkingmomlife.com/working-mom-life-resources/">Fabulous Working Mom Life</li>
+            <li><a href="https://www.mother.ly/work/find-your-group-10-mom-groups-that-are-totally-amazing">Top 10 Mom Support Groups</li>
+            <li><a href="https://mommypoppins.com/anywhere">Mom Meeting Moms - Find a Group in Your Area</li>
+         </div>
       </ul>
 
    </body>

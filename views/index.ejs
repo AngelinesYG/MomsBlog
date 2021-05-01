@@ -8,30 +8,36 @@
       <title>Mommy's Blog</title>
       <style>
          ul { list-style: none;}
-         body {background: teal;}
+         body {background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGN_WpbsNGvaG39ph7kxckkj4HEORlQQyFlQ&usqp=CAU ')}
        </style>
    </head>
    <body>
+   <div class="container">
       <h1>Welcome To Our Blogs</h1>
       <ul>
       <% for(let i = 0; i < momblogs.length; i++){ %>
          <li>
-            <img class="img" src="<%=momblogs[i].img%>"<br/>
-            <button>
-               <a href="<%=momblogs[i].id%>"><%=momblogs[i].title%></a>
-            </button><br/>
+            <div class="card">
+               <button>
+                  <a href="<%=momblogs[i].id%>"><%=momblogs[i].title%></a>
+               </button><br/>
+               <img class="img" src="<%=momblogs[i].img%>"><br/>
 
-            <a href="/momblog/<%=momblogs[i]._id%>/edit">Edit Blog</a>
-            <form action="/momblog/<%=momblogs[i].id%>?_method=DELETE" method="POST">
-               <input type="submit" value="Delete"/>
-            </form>
+               <button>
+                  <a href="/momblog/<%=momblogs[i]._id%>/edit">Edit Blog</a><br/>
+               </button>
+               <form action="/momblog/<%=momblogs[i].id%>?_method=DELETE" method="POST">
+                  <input type="submit" value="Delete"/>
+               </form>
+            </div>
          </li>
       <% } %>
       </ul>
-      <nav>
-         <a href="/momblog/new">Create New Blog</a>
-         <a href="/momblog">Home Page</a>
-         <a href="/momblog/qa">Questions and Answers Page</a>
+      <nav class="nav">
+         <a href="/momblog/new">Create New Blog</a><br/>
+         <a href="/momblog">Home Page</a><br/>
+         <a href="/momblog/qa">Questions and Answers Page</a><br/>
       </nav>
+   </div>
    </body>
 </html>

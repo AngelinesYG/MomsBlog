@@ -7,20 +7,28 @@
       <link rel="stylesheet" href="/CSS/app.css">
       <title></title>
       <style>
-         .module { position: relative}
-         body {
-            font-weight: bolder;
-            text-emphasis-color: red;
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdcDbdgW1qUztMK5XfOLdPGLAZR5uhkKzAA&usqp=CAU')}
-         body img{
-            opacity: 0.3
+         .form {
+            background: #c14242;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
          }
+         .nav {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               background: lightgrey;
+               border: 2px solid black;
+               border-radius: 1em;
+         }
+         body {
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdcDbdgW1qUztMK5XfOLdPGLAZR5uhkKzAA&usqp=CAU')}
 
       </style>
    </head>
    <body>
-      <div class="module">
-         <div class="module-inside">
+      <div class="">
+         <div class="form">
             <h1>Edit Your Blog</h1>
             <form action="/momblog/<%=momblog.id%>?_method=PUT" method="POST">
 
@@ -38,8 +46,10 @@
             </form>
          </div>
    </div>
+   <div class="nav">
       <a href="/momblog/index">Back to Blogs</a>
       <br/>
       <a href="/momblog">Home Page</a>
+   </div>
    </body>
 </html>
