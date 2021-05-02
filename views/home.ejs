@@ -12,11 +12,18 @@
             display: flex;
             align-self: center;
             }
+         h4{
+            background-color: white;
+            padding: 30px;
+         }
+
+         h1 {text-align: center;}
          ul {list-style: none;}
          .inner-links {
             display: flex;
+            align-items: center;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             background: lightgrey;
             border: 2px solid black;
             border-radius: 1em;}
@@ -41,16 +48,26 @@
          <div class='image'>
             <img src="https://image.shutterstock.com/image-vector/happy-mother-day-card-continuous-600w-1356350777.jpg"/>
          </div>
-
+         <h4>We know motherhood is hard. Between work, school, or being a stay at home mom, we have a lot to juggle. Some feel like they're about to explode, some are at the end of the rope, some just need a break, and others love all the chaos and mess.<br/>
+         <br/>
+         Regardles of who you are, we feel you. We know the struggle and sacrifice. Here, at Mom Blogs we want you to feel safe and comfortable to express your joy as much as your frustration.<br/>
+         <br/>
+         We are a judgment free site where you can simply write your joy or troubles away. Where you can vent judgment free, and have the choice to do so annonymously.<br/>
+         <br/>
+         Take a look at our blogs and see what other moms, just like you, are writing about. You may just need a good laugh, or to see that other moms struggle just like you. Whatever you need. This is the site for you.<br/>
+         <br/>
+         For additional resources or information, visit any of the links below or see our frequently asked questions page. HAPPY WRITING!</h4>
+         <br/>
          <div class='inner-links'>
             <li><img src="<%=momblogs.img%>"/>
-            <h3><a href ="/momblog<%=momblogs.title%>/index">OurBlogs</a></h3>
+               <h3><a href ="/momblog<%=momblogs.title%>/index">See Our Blogs</a></h3>
             </li><br/>
             <li>
-            <h3><a href="momblog/qa">Frequently Asked Questions</a></h3>
-         </li></h3><br/>
+               <h3><a href="momblog/qa">Frequently Asked Questions</a></h3>
+            </li><br/>
          </div>
 
+         <br/>
          <div class='resources'>
             <li><h2>Resources</h2></li><br/>
             <li><a href="https://www.workingmomsagainstguilt.com/working-mom-resources/">Working Moms Against Guilt</li>

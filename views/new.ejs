@@ -7,29 +7,66 @@
         <link rel="stylesheet" href="/CSS/app.css">
       <title></title>
       <style>
-         body{ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQsIqIwsLrpm6n2aUZnvKspLttHRj45YgTCg&usqp=CAU')}
+      .all2 {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         background-color: pink;
+      }
+      .form2 {
+         background: lightgrey;
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         width: 80%;
+         height: 200px;
+         border-radius: 1em;
+         border: 3px solid blue;
+         /* justify-content: space-between; */
+      }
+      .nav2 {
+            align: center;
+            display: flex;
+            align-content: center;
+            /* flex-direction: row; */
+            justify-content: space-around;
+            width: 400px;
+            background: lightgrey;
+            border: 2px solid black;
+            border-radius: 1em;
+      }
+         body{ background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6P6VBin0HxI2-wNZ9USh8kTdsD_VrMItiXg&usqp=CAU')}
       </style>
    </head>
    <body>
+    <div class="all2">
       <h1>New Blogs Page</h1>
       <form action="/momblog/index" method="POST">
          <lable for="image"></lable>
+         <div class="form2">
             Image: <input type="text" name="img"/>
             <br/>
+
          <lable for="title">Title:</lable>
             <input type="text" name="title"/>
            <br/>
+
           <lable for="title">Author:</lable>
             <input type="text" name="author"/>
            <br/>
+
           <lable for="Blog">Blog Excerpt:</lable>
             <input type="text" name="Blog"/>
            <br/>
 
        <input type="submit" value="Create New Blog"/>
+       </div>
        </form>
+   <div class="nav2">
    <a href="/momblog/index">Back to Blogs</a>
    <br/>
    <a href="/momblog">Home Page</a>
+   </div>
+</div>
    </body>
 </html>

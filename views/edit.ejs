@@ -7,31 +7,47 @@
       <link rel="stylesheet" href="/CSS/app.css">
       <title></title>
       <style>
+         .all {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: lightblue;
+
+         }
          .form {
-            background: #c14242;
+            background: lightgrey;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            width: 80%;
+            height: 200px;
+            border-radius: 1em;
+            border: 3px dashed blue;
          }
-         .nav {
+         .nav1 {
+               align: center;
                display: flex;
-               flex-direction: row;
-               justify-content: space-between;
+               align-content: center;
+               justify-content: space-around;
+               width: 400px;
                background: lightgrey;
                border: 2px solid black;
                border-radius: 1em;
          }
-         body {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdcDbdgW1qUztMK5XfOLdPGLAZR5uhkKzAA&usqp=CAU')}
+
+
+         body {background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJdcDbdgW1qUztMK5XfOLdPGLAZR5uhkKzAA&usqp=CAU')}
 
       </style>
    </head>
    <body>
-      <div class="">
-         <div class="form">
-            <h1>Edit Your Blog</h1>
-            <form action="/momblog/<%=momblog.id%>?_method=PUT" method="POST">
+   <!-- <div class="hero-image"> -->
+      <div class="all">
 
+            <h1>Edit Your Blog</h1>
+
+            <form action="/momblog/<%=momblog.id%>?_method=PUT" method="POST">
+            <div class="form">
                Image: <input type="text" name="img" value="<%=momblog.img%>"/><br/>
 
                 Name: <input type="text" name="title" value="<%=momblog.title%>"/>
@@ -43,13 +59,16 @@
                Blog Excerpt: <input type="text" name="Blog" value="<%=momblog.blog%>"/>
               <br/>
                <input type="submit" value="Submit Changes"/>
+            </div>
             </form>
+
+
+         <div class="nav1">
+            <a href="/momblog/index">Back to Blogs</a>
+            <br/>
+            <a href="/momblog">Home Page</a>
          </div>
-   </div>
-   <div class="nav">
-      <a href="/momblog/index">Back to Blogs</a>
-      <br/>
-      <a href="/momblog">Home Page</a>
-   </div>
+      </div>
+   <!-- </div> -->
    </body>
 </html>

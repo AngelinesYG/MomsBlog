@@ -17,13 +17,21 @@ li {
    background-color: teal;
    border-radius: 1em;
 }
+h1 {color: red;
+   background: lightblue;
+   border-radius: 1em;
+   border: solid red;
+   text-align: center;
+   width: 550px;
+}
 .nav{
    display: flex;
    flex-grow: 3;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
    background: lightgrey;
    border-radius: 0.5em;
+   border: solid blue;
 
 }
 .card {

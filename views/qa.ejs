@@ -3,17 +3,48 @@
    <head>
       <meta charset="utf-8">
       <title></title>
+      <style>
+      h1{
+         background: lightblue;
+         border-radius: 1em;
+         border: solid red;
+         text-align: center;
+         width: 550px;
+      }
+      .text {background-color: ghostwhite;
+             background-size: 300px;}
+      body {background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Iu3hrsWtXPAKGr9_05EDX_yALmzdICKumw&usqp=CAU")}
+      {display:flex; align-content: center;}
+      .nav3 {
+            align: center;
+            display: flex;
+            align-content: center;
+            /* flex-direction: row; */
+            justify-content: space-around;
+            width: 400px;
+            background: lightgrey;
+            border: 2px solid black;
+            border-radius: 1em;
+      }
+      </style>
    </head>
    <body>
       <h1>Frequenly Asked Questions</h1>
-
+   <div class="text">
       <% for(let i = 0; i < qa.length; i++){ %>
          <h4><%=qa[i].question%></h4>
-         <p><%= qa[i].answer%><p>
+
+         <p>1. <%=qa[i].answer1%></p>
+         <p>2. <%=qa[i].answer2%></p>
+         <p>3. <%=qa[i].answer3%></p>
+
          <br/>
       <% } %>
-      <a href="/momblog/index">See Our Blogs</a>
-      <a href="/momblog/new">Create New Blog</a>
-      <a href="/momblog">Home Page</a>
+   </div>
+      <div class="nav3">
+         <a href="/momblog/index">See Our Blogs</a>
+         <a href="/momblog/new">Create New Blog</a>
+         <a href="/momblog">Home Page</a>
+      </div>
    </body>
 </html>
