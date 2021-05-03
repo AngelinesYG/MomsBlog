@@ -17,14 +17,15 @@
       <h1>Blogs Show Page</h1>
 
       <nav>
-         <a href="/momblog/index">Back to Blogs</a>
+         <button><a href="/momblog/index">Back to Blogs</a></button>
       </nav>
          <!-- <ul> -->
             <img src="<%=momblog.img%>">
             <h2><%=momblog.title%></h2>
              By: <h5><%=momblog.author%></h5>
             <p><%=momblog.blog%></p>  <!-- </ul> -->
-            <a href="/momblog/<%=momblog.id%>/edit">Edit Blog</a><br/>
+            <button>
+            <a href="/momblog/<%=momblog.id%>/edit">Edit Blog</a><br/></button>
             <form action="/momblog/<%=momblog.id%>?_method=DELETE" method="POST">
                <input type="submit" value="Delete"/>
             </form>
