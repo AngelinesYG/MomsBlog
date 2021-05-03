@@ -5,7 +5,10 @@
       <title></title>
       <style>
       body { display: flex;
-         position: relative;}
+         flex-direction: column;
+         justify-content: center;
+         position: relative;
+         margin: 0 auto;}
          .header {display: flex;
             align-self: center;}
          img {max-width: 500px;
@@ -14,11 +17,11 @@
             }
          h4{
             background-color: white;
-            padding: 30px;
+            padding: 10px;
          }
 
          h1 {text-align: center;}
-         ul {list-style: none;}
+         /* ul {list-style: none;} */
          .inner-links {
             display: flex;
             align-items: center;
@@ -41,7 +44,7 @@
    </head>
    <body>
 
-      <ul>
+
          <div class='header'>
             <h1>Welcome To Mom's Blog</h1>
          </div>
@@ -57,25 +60,29 @@
          Take a look at our blogs and see what other moms, just like you, are writing about. You may just need a good laugh, or to see that other moms struggle just like you. Whatever you need. This is the site for you.<br/>
          <br/>
          For additional resources or information, visit any of the links below or see our frequently asked questions page. HAPPY WRITING!</h4>
-         <br/>
+
          <div class='inner-links'>
-            <li><img src="<%=momblogs.img%>"/>
+            <img src="<%=momblogs.img%>"/>
                <h3><a href ="/momblog<%=momblogs.title%>/index">See Our Blogs</a></h3>
-            </li><br/>
-            <li>
-               <h3><a href="momblog/qa">Frequently Asked Questions</a></h3>
-            </li><br/>
+            <br/>
+
+               <h3><a href="momblog/qa">Moms Questions Answered</a></h3>
+            <br/>
          </div>
 
          <br/>
-         <div class='resources'>
-            <li><h2>Resources</h2></li><br/>
-            <li><a href="https://www.workingmomsagainstguilt.com/working-mom-resources/">Working Moms Against Guilt</li>
-            <li><a href="https://www.fabworkingmomlife.com/working-mom-life-resources/">Fabulous Working Mom Life</li>
-            <li><a href="https://www.mother.ly/work/find-your-group-10-mom-groups-that-are-totally-amazing">Top 10 Mom Support Groups</li>
-            <li><a href="https://mommypoppins.com/anywhere">Mom Meeting Moms - Find a Group in Your Area</li>
-         </div>
-      </ul>
 
+            <ul class='resources'>
+            <li><h2>Resources</h2></li>
+            <li><a href="https://www.workingmomsagainstguilt.com/working-mom-resources/">Working Moms Against Guilt</a></li>
+            <li><a href="https://www.fabworkingmomlife.com/working-mom-life-resources/">Fabulous Working Mom Life</a></li>
+            <li><a href="https://www.mother.ly/work/find-your-group-10-mom-groups-that-are-totally-amazing">Top 10 Mom Support Groups</a></li>
+            <li><a href="https://mommypoppins.com/anywhere">Mom Meeting Moms - Find a Group in Your Area</a></li>
+         </ul>
+
+
+      <footer>Mom Blogs is a creation by Angelines Yaport.
+      Improvements to follow in the next several months.</footer>
    </body>
+
 </html>

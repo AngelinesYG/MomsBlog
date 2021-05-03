@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
+      <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+      <!-- <link rel="stylesheet" href="../CSS/app.css"> -->
       <title></title>
       <style>
       h1{
@@ -9,10 +11,10 @@
          border-radius: 1em;
          border: solid red;
          text-align: center;
-         width: 550px;
+         width: 360px;
       }
-      .text {background-color: ghostwhite;
-             background-size: 300px;}
+      .qa {background-color: ghostwhite; border: solid black;}
+
       body {background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Iu3hrsWtXPAKGr9_05EDX_yALmzdICKumw&usqp=CAU")}
       {display:flex; align-content: center;}
       .nav3 {
@@ -22,29 +24,46 @@
             /* flex-direction: row; */
             justify-content: space-around;
             width: 400px;
-            background: lightgrey;
+            background: lightblue;
             border: 2px solid black;
             border-radius: 1em;
       }
       </style>
    </head>
    <body>
-      <h1>Frequenly Asked Questions</h1>
-   <div class="text">
-      <% for(let i = 0; i < qa.length; i++){ %>
-         <h4><%=qa[i].question%></h4>
+      <h1>Answers to Some Mom Questions</h1>
+<section>
+   <div class="container">
+      <!-- <div class="accordion">
+         <div class="accordion-item" id="question">
+            <a class="accordion-link" href="question"> -->
+                  <% for(let i = 0; i < qa.length; i++){ %>
+      <!-- <div class="accordion">
+         <div class="accordion-item" id="question">
+            <a class="accordion-link" href="<%=qa[i].question%>"> -->
+               <div class="qa">
+                     <h3><%=qa[i].question%></h3>
+               <!-- <ion-icon name="chevron-down-outline"></ion-icon>
+               <ion-icon name="chevron-up-outline"></ion-icon> -->
+            <!-- </a> -->
 
-         <p>1. <%=qa[i].answer1%></p>
-         <p>2. <%=qa[i].answer2%></p>
-         <p>3. <%=qa[i].answer3%></p>
-
-         <br/>
-      <% } %>
+                     <p>1. <%=qa[i].answer1%></p>
+                     <p>2. <%=qa[i].answer2%></p>
+                     <p>3. <%=qa[i].answer3%></p>
+               </div>
+                     <br/>
+                  <% } %>
+         <!-- </div>
+      </div> -->
    </div>
+</section>
       <div class="nav3">
          <a href="/momblog/index">See Our Blogs</a>
          <a href="/momblog/new">Create New Blog</a>
          <a href="/momblog">Home Page</a>
       </div>
+
    </body>
+   <footer> Mom Blogs is a creation by Angelines Yaport.
+   Improvements to follow in the next several months.</footer>
 </html>
