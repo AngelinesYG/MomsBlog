@@ -64,19 +64,19 @@
        </style>
    </head>
    <body>
-      <ul class="logins">
+      <tb class="logins">
       <% if (currentUser) { %>
-           <li>Welcome <%=currentUser.username%></li>
-           <li>
+           <td>Welcome <%=currentUser.username%></td>
+           <td>
            <form action="/sessions?_method=DELETE" method="POST">
               <input type="submit" value="Log Out" class="btn-small red">
            </form>
-           </li>
+        </td>
         <% } else { %>
-          <li><a href="/users/new">Sign Up</a> </li>
-          <li><a href="/sessions/new">Log In</a> </li>
+          <td><a href="/users/new">Sign Up</a> </td>
+          <td><a href="/sessions/new">Log In</a> </td>
         <% } %>
-      </ul>
+     </tb>
    <div class="container">
       <h1>Welcome To Our Blogs</h1>
       <ul>
@@ -88,12 +88,6 @@
                </h4><br/>
                <img class="img" src="<%=momblogs[i].img%>"><br/>
 
-               <!-- <button> -->
-                  <a href="/momblog/<%=momblogs[i]._id%>/edit">Edit Blog</a><br/>
-               <!-- </button> -->
-               <form action="/momblog/<%=momblogs[i].id%>?_method=DELETE" method="POST">
-                  <input type="submit" value="Delete"/>
-               </form>
             </div>
          </li>
       <% } %>

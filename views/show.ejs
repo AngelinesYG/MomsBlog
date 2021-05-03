@@ -24,5 +24,9 @@
             <h2><%=momblog.title%></h2>
              By: <h5><%=momblog.author%></h5>
             <p><%=momblog.blog%></p>  <!-- </ul> -->
+            <a href="/momblog/<%=momblog.id%>/edit">Edit Blog</a><br/>
+            <form action="/momblog/<%=momblog.id%>?_method=DELETE" method="POST">
+               <input type="submit" value="Delete"/>
+            </form>
    </body>
 </html>
