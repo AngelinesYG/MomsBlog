@@ -25,8 +25,8 @@
          .inner-links {
             display: flex;
             align-items: center;
-            flex-direction: row;
-            justify-content: space-around;
+            flex-direction: column;
+            /* justify-content: space-around; */
             background: lightgrey;
             border: 2px solid black;
             border-radius: 1em;}
@@ -63,11 +63,12 @@
 
          <div class='inner-links'>
             <img src="<%=momblogs.img%>"/>
-               <h3><a href ="/momblog<%=momblogs.title%>/index">See Blogs Collection</a></h3>
-            <br/>
 
+               <h3><a href="/users/new">Sign Up</a></h3>
+               <h3><a href="/sessions/new">Log In</a></h3>
+               <h3><a href ="/momblog<%=momblogs.title%>/index">See Blogs Collection</a></h3>
                <h3><a href="momblog/qa">Moms Questions Answered</a></h3>
-            <br/>
+
          </div>
 
          <br/>

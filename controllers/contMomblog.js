@@ -4,8 +4,15 @@ const momblogSeed = require('../models/momblogSeed.js')
 // const qaSeed = require ('./models/qaSeed.js')
 const qa = require ('../models/qa.js')
 const router = express.Router()
+const session = require('express-session')
 
-
+const isAuthenticated = (req, res, next)=>{
+   if (req.session.currentUser){
+      return next()
+   } else {
+      res.redirect('/sessions/new')
+   }
+}
 
 ///HOME/////
 router.get('/', (req, res)=>{
@@ -36,7 +43,8 @@ router.get('/index', (req, res)=>{
    Momblog.find({}, (err, allMomblogs) =>{
       res.render('index.ejs',
          {
-            momblogs:allMomblogs
+            momblogs:allMomblogs,
+            currentUser: req.session.currentUser
          }
       );
 
@@ -44,8 +52,10 @@ router.get('/index', (req, res)=>{
 })
 
 /////NEW//////(start new blog)
-router.get('/new', (req, res)=>{
-   res.render('new.ejs')
+router.get('/new', isAuthenticated, (req, res)=>{
+   res.render('new.ejs',
+      {currentUser: req.session.currentUser}
+   )
 })
 
 ////CREATE/////(create and posts new blog)
@@ -56,12 +66,13 @@ router.post('/index', (req, res)=>{
 })
 
 /////EDIT Prt-1 (get blog)/////
-router.get('/:id/edit', (req, res)=>{
+router.get('/:id/edit', isAuthenticated, (req, res)=>{
    Momblog.findById(req.params.id,
       (err, foundMomblog)=>{
       res.render('edit.ejs',
          {
-            momblog:foundMomblog
+            momblog:foundMomblog,
+            currentUser: req.session.currentUser
          }
       )
    })
@@ -88,13 +99,14 @@ router.get('/qa', (req, res)=>{
 })
 
 ////SHOW//////
-router.get('/:id', (req, res)=>{
+router.get('/:id', isAuthenticated, (req, res)=>{
    Momblog.findById(req.params.id,
       (err, foundMomblog)=>{
       res.render(
          'show.ejs',
          {
-            momblog:foundMomblog
+            momblog:foundMomblog,
+            currentUser: req.session.currentUser
          }
       )
    })

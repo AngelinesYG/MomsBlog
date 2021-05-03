@@ -4,6 +4,8 @@
 const express = require('express');
 const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
+const session = require('express-session')
+// const session = require('express-session')
 
 //____________________
 //Configuration
@@ -11,6 +13,7 @@ const mongoose = require ('mongoose');
 require('dotenv').config()
 const app = express ();
 const db = mongoose.connection;
+
 
 //___________________
 //Port
@@ -28,7 +31,8 @@ const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI , {
    useNewUrlParser: true,
    useUnifiedTopology: true,
-   useFindAndModify: false }
+   useFindAndModify: false,
+   useCreateIndex: true}
 );
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
@@ -44,6 +48,13 @@ app.use(express.urlencoded({ extended: true }));// extended: false - does not al
 app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(
+   session({
+      secret: process.env.SECRET,
+      resave: false,
+      saveUnitialized: false,
+   })
+)
 app.set('veiw engine', 'ejs')
 //___________________
 // Routes
@@ -68,6 +79,10 @@ app.set('veiw engine', 'ejs')
 
    const momblogController = require('./controllers/contMomblog.js')
    app.use('/momblog', momblogController)
+   const userController = require('./controllers/usrController.js')
+   app.use('/users', userController)
+   const sessionsController = require('./controllers/sessController.js')
+   app.use('/sessions', sessionsController)
 
    app.get('/', (req, res)=>{
       res.redirect('/momblog')
