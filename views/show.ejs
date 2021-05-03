@@ -7,7 +7,8 @@
       <link rel="stylesheet" href="/CSS/app.css">
       <title></title>
       <style>
-        ul { list-style: none;}
+        h1 { margin: 0 auto;}
+        h2{text-decoration: underline;}
         body {background: aqua;}
         img {width: 400px; height: auto;}
       </style>
@@ -18,11 +19,10 @@
       <nav>
          <a href="/momblog/index">Back to Blogs</a>
       </nav>
-         <ul>
-            <li><img src="<%=momblog.img%>"></li>
-            <li><h2><%=momblog.title%></h2></li>
-            <li> By: <h5><%=momblog.author%></h5></li>
-            <li><%=momblog.blog%></li>
-         </ul>
+         <!-- <ul> -->
+            <img src="<%=momblog.img%>">
+            <h2><%=momblog.title%></h2>
+             By: <h5><%=momblog.author%></h5>
+            <p><%=momblog.blog%></p>  <!-- </ul> -->
    </body>
 </html>
