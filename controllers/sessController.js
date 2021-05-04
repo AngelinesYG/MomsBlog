@@ -24,7 +24,7 @@ sessions.post('/', (req, res)=>{
             foundUser.password)){
                console.log(req)
             req.session.currentUser = foundUser
-            res.redirect('/')
+            res.redirect('/momblog/index')
          } else {
             res.send('<a href="/">Sorry, invalid password</a>')
          }
