@@ -1,4 +1,6 @@
 import React from "react"
+import {Link} from 'gatsby'
+import Footer from '../components/footer'
 
 const HomePage = () => {
   return (
@@ -22,8 +24,9 @@ const HomePage = () => {
          <li><a href="https://www.mother.ly/work/find-your-group-10-mom-groups-that-are-totally-amazing">Top 10 Mom Support Groups</a></li>
          <li><a href="https://mommypoppins.com/anywhere">Mom Meeting Moms - Find a Group in Your Area</a></li>
          </ul>
+         <h3>Would like to contact us directly? <Link to="/about-contact">Click Here</Link></h3>
        </div>
-  
+      <Footer/>
   </div>
   )
 }
