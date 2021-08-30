@@ -1,12 +1,11 @@
 import React from "react"
 import {Link} from 'gatsby'
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 const HomePage = () => {
   return (
-  <div>
-  
-  <div id="welcoming">
+    <Layout>
+        <div id="welcoming">
          <h1>Welcome to Moms Blog!</h1>
          <img src="https://image.shutterstock.com/image-vector/happy-mother-day-card-continuous-600w-1356350777.jpg"/>
 
@@ -26,8 +25,7 @@ const HomePage = () => {
          </ul>
          <h3>Would like to contact us directly? <Link to="/about-contact">Click Here</Link></h3>
        </div>
-      <Footer/>
-  </div>
+    </Layout>
   )
 }
 export default HomePage

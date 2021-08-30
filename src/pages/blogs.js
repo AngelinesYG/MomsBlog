@@ -1,14 +1,14 @@
 import { divide } from 'lodash'
 import React from 'react' 
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 const Blogs = () =>{
     return (
-        <div>
+        <Layout>
             <h1>Our Blogs</h1>
             <h2>Coming Soon</h2>
-            
-        </div>
+        </Layout>
+
     )
 }
 export default Blogs

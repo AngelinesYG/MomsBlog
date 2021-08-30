@@ -1,12 +1,11 @@
 import React from 'react' 
-import Footer from '../components/footer'
+import Layout from '../components/layout'
 
 const AboutContact = () =>{
     return(
-        <div>
-           <div className="About-container">
+        <Layout>
+            <div className="About-container">
               <h1 id="AboutMe">About the Developer</h1>
-            
              <div id="text">
              <h4>I am a mother to four amazing boys, who is filled with a passion for writing and creativity. My strength lies in my ability to problem solve with a keen attention to detail. These are qualities that support my work as a Developer.
 
@@ -14,10 +13,10 @@ const AboutContact = () =>{
              <h5>
              <a href="mailto:angelinesyg@gmail.com">Email me here</a>
              </h5>
-
              </div>
            </div>
-        </div>
+        </Layout>
+            
     )
 }
 export default AboutContact
