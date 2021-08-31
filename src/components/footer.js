@@ -1,11 +1,21 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 
 const Footer = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata{
+                    description
+                }
+            }
+        }
+    `)
         return (
             <footer className="footer-container">
                <h5>About the App</h5>
-                <p>Moms Blog was created by a mom for moms. With the idea that moms need a safe avenue to freely express themselves without being judged. By writing a blog about their experiences, moms can say whatever they need to say without fear of backlash and also find support from other moms experiencing or having experienced same or similar circumstances!</p>
+                <p>{data.site.siteMetadata.description}</p>
                 <h5>Thanks for visiting!</h5>
                 <ul>
                     <li>
