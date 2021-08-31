@@ -13,7 +13,15 @@ module.exports = {
     title: 'MB',
     description: 'Moms Blog was created by a mom for moms. With the idea that moms need a safe avenue to freely express themselves without being judged. By writing a blog about their experiences, moms can say whatever they need to say without fear of backlash and also find support from other moms experiencing or having experienced same or similar circumstances'
   },
-
+  flags: {
+    
+    DEV_SSR: false, 
+    DEV_WEBPACK_CACHE: false,
+    FAST_DEV: false,
+    PRESERVE_FILE_DOWNLOAD_CACHE: false,
+    PARALLEL_SOURCING: false,
+    LMDB_STORE: false,
+  },
   plugins: [
     'gatsby-plugin-sass',
     'gatsby-plugin-playground',

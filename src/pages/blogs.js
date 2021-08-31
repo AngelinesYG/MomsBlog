@@ -13,7 +13,7 @@ const Blogs = () =>{
                             title
                             Author
                         }
-                        html
+                        id
                     }
                 }
             }
@@ -29,7 +29,7 @@ const Blogs = () =>{
                         <li>
                             <h2>{edge.node.frontmatter.title}</h2>
                             <h3>{edge.node.frontmatter.Author}</h3>
-                            <p>{edge.node.html}</p>
+                            <p>{edge.node.id}</p>
                         </li>
                     )
                 })}
