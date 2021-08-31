@@ -1,0 +1,26 @@
+.header {
+    padding: 1rem 0 3rem;
+
+}
+.initials{
+    color:black;
+    font-size: 3rem;
+    text-decoration: none;
+}
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+.nav-item {
+    color: #999999;
+    font-size: .9rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+}
+.nav-item:hover {
+    color: red;
+}
+.active-nav-item {
+    color: rgb(99, 4, 122);
+}
