@@ -1,3 +1,19 @@
 .footer {
     margin-top: 6rem;
+    background: rgb(189, 186, 186);
+    padding: 2rem;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-around;
+
+    a {
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        color: rgb(81, 0, 128)   
+    }
+     a:hover {
+        color: red;
+    }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import * as footerStyles from './footer.module.scss'
 
+
 const Footer = () => {
     const data = useStaticQuery(graphql`
         query {
@@ -22,11 +23,9 @@ const Footer = () => {
                         <p>By:</p>
                         <p>Angelines Yaport-Garcia © 2021</p>
                         <a href="https://www.linkedin.com/in/angelines-yaport-garcia/" target="https://www.linkedin.com/in/angelines-yaport-garcia/">
-                            <i className="fab fa-linkedin" aria-hidden="false"></i>
-                        </a>
-                        <a href="mailto:angelinesyg@gmail.com" target="mailto:angelinesyg@gmail.com">
-                            <i className="far fa-envelope-open" aria-hidden="false"></i>
-                        </a>
+                            LinkedIn</a>
+
+                        <a href="mailto:angelinesyg@gmail.com" target="mailto:angelinesyg@gmail.com">Email</a>
                     </li>
                 </ul>
             </footer>

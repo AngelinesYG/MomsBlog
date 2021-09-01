@@ -7,6 +7,7 @@ import * as layoutStyles from './layout.module.scss'
 
 const Layout = (props) =>{
     return (
+        
         <div className={layoutStyles.container}>
             <div className={layoutStyles.content}>
             <HeaderNav />
@@ -14,6 +15,7 @@ const Layout = (props) =>{
             </div>
             <Footer />
         </div>
+        
     )
 }
 export default Layout

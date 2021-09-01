@@ -4,24 +4,43 @@ const path = require('path')
 
 exports.createPages = async ({graphql, actions})=>{
     const {createPage} = actions 
-    const blogTemplate = require.resolve(`./src/templates/blog.js`)
+    const blogTemplate = path.resolve(`./src/pages/blog.js`)
     const response = await graphql(`
+
         query {
-            allContentfulBlogPost {
+            allContentfulBlogPost (
+                sort: {
+                fields: publishedDate,
+                order: DESC
+                }
+                ) {
                 edges {
                     node {
+                        title
                         slug
+                     author
+                     publishedDate(formatString: "MMMM Do, YYYY")
+                     body {
+                        json
+                        }
                     }
                 }
             }
-        }
+         }
     `)
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.log(response)
     response.data.allContentfulBlogPost.edges.forEach((edge) => { 
+
         createPage({
             component: blogTemplate,
             path: `/blog/${edge.node.slug}`,
             context: {
-                slug: edge.node.slug
+                title: edge.node.title,
+                slug: edge.node.slug,
+                author: edge.node.author,
+                publishedDate: edge.node.publishedDate,
+                body: edge.node.body
             }
         })
     })      

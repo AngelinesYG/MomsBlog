@@ -31,6 +31,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-sass',
+    'gatsby-plugin-fontawesome-css',
     'gatsby-plugin-playground',
     {
       resolve: 'gatsby-source-filesystem',

@@ -36,12 +36,12 @@ const HeaderNav = () => {
          <li>
             <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/about-contact">About/Contact Us</Link>
             </li>
-         <li>
+         {/* <li>
             <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/login">Login</Link>
             </li>
          <li>
             <Link className={headerStyles.navItem} activeClassName={headerStyles.activeNavItem} to="/signup">Register</Link>
-            </li> 
+            </li>  */}
          </ul>
          </nav>
       </header-nav>
