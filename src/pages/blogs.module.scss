@@ -1,0 +1,39 @@
+.posts {
+    list-style-type: none;
+    margin: 0;
+
+}
+.post {
+    margin: 2rem 0;
+    a {
+        background: rgb(233, 188, 247);
+        color: rgb(93, 5, 128);
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+    }
+    a:hover {
+        background:rgb(183, 119, 212)
+    }
+
+    h2 {
+        margin-bottom: 0;
+    }
+    h4 {
+        background: rgb(233, 188, 247);
+        color: rgb(95, 93, 93);
+        font-size: .9rem;
+        font-style: italic;
+        display: block;
+        padding: .8rem;
+        text-decoration: none;
+    }
+    p {
+        background: rgb(233, 188, 247);
+        color: rgb(95, 93, 93);
+        font-size: .9rem;
+        font-style: italic;
+        display: block;
+        
+    }
+}

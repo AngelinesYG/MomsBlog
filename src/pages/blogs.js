@@ -1,19 +1,24 @@
 // import { divide } from 'lodash'
 import React from 'react' 
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/layout'
+import * as blogStyles from './blogs.module.scss'
 
 const Blogs = () =>{
     const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark {
+            allContentfulBlogPost (
+                sort: {
+                    fields: publishedDate, 
+                    order: DESC 
+                }) 
+                    {
                 edges {
                     node {
-                        frontmatter {
-                            title
-                            Author
-                        }
-                        id
+                        title
+                        slug
+                        author
+                        publishedDate(formatString: "MMMM Do, YYYY")
                     }
                 }
             }
@@ -23,13 +28,16 @@ const Blogs = () =>{
     return (
         <Layout>
             <h1>Our Blogs</h1>
-            <ol>
-                {data.allMarkdownRemark.edges.map((edge) =>{
+            <ol className={blogStyles.posts}>
+                {data.allContentfulBlogPost.edges.map((edge) =>{
                     return (
-                        <li>
-                            <h2>{edge.node.frontmatter.title}</h2>
-                            <h3>{edge.node.frontmatter.Author}</h3>
-                            <p>{edge.node.id}</p>
+                        <li className={blogStyles.post}>
+                            <Link to={`/blog/${edge.node.slug}`}>
+                                <h2>{edge.node.title}</h2>
+                                
+                            </Link>
+                                <h4>By: {edge.node.author}</h4>
+                                <p>{edge.node.publishedDate}</p>
                         </li>
                     )
                 })}
