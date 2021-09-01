@@ -4,7 +4,7 @@ const path = require('path')
 
 exports.createPages = async ({graphql, actions})=>{
     const {createPage} = actions 
-    const blogTemplate = path.resolve(`./src/templates/blog.js`)
+    const blogTemplate = require.resolve(`./src/templates/blog.js`)
     const response = await graphql(`
         query {
             allContentfulBlogPost {
