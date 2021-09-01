@@ -1,11 +1,9 @@
-.footer {
-    margin-top: 6rem;
-    background: rgb(189, 186, 186);
-    padding: 2rem;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
+.about {
+    padding: 1rem 0 3rem;
 
+    h4 {
+        display: block
+    }
     a {
         text-decoration: none;
         text-size-adjust: 20px;
@@ -17,4 +15,7 @@
      a:hover {
         color: red;
     }
+}
+.devMe {
+
 }

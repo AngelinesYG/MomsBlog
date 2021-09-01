@@ -23,9 +23,9 @@ const Footer = () => {
                         <p>By:</p>
                         <p>Angelines Yaport-Garcia © 2021</p>
                         <a href="https://www.linkedin.com/in/angelines-yaport-garcia/" target="https://www.linkedin.com/in/angelines-yaport-garcia/">
-                            LinkedIn</a>
+                            LinkedIn🦢</a>
 
-                        <a href="mailto:angelinesyg@gmail.com" target="mailto:angelinesyg@gmail.com">Email</a>
+                        <a href="mailto:angelinesyg@gmail.com" target="mailto:angelinesyg@gmail.com">Email📧</a>
                     </li>
                 </ul>
             </footer>

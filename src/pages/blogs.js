@@ -32,28 +32,30 @@ const Blogs = () =>{
             <ol className={blogStyles.posts}>
                 {/* {data.allContentfulBlogPost.edges.map((edge) =>{
                     return ( */}
-                    <h2><Link to="/blog">Boy Mom</Link></h2>
-                    <h4>By: Super Mom</h4>
-                    <p>May 19, 2021</p>
-                    <br/>
-
+                <li className={blogStyles.post}>
+                     <h2><Link to="/blog">Boy Mom</Link></h2>
+                     <h4>By: Super Mom</h4>
+                     <p>May 19, 2021</p>
+                     <br/>
+                </li>
+                <li className={blogStyles.post}>
                     <h2><Link to="/blog">So Spent</Link></h2>
                     <h4>By: Sexy Mamma</h4>
                     <p>May 20, 2021</p>
                     <br/> 
-
+                </li>
+                <li className={blogStyles.post}>
                     <h2><Link to="/blog">Amazing Moms</Link></h2>
                     <h4>By: Super Mom</h4>
                     <p>May 18, 2021</p>
                     <br/>
-                        <li className={blogStyles.post}>
+                </li>
 {/*                             
 
                                 <h2>{edge.node.title}</h2>
                                 <h4>By: {edge.node.author}</h4>
                                 <p>{edge.node.publishedDate}</p> */}
                         
-                         </li>
                    {/* )
                 })} */}
             </ol>
