@@ -1,10 +1,12 @@
 import React from "react"
 import {Link} from 'gatsby'
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 const HomePage = () => {
   return (
     <Layout>
+      <Head />
         <div id="welcoming">
          <h1>Welcome to Moms Blog!</h1>
          <img src="https://image.shutterstock.com/image-vector/happy-mother-day-card-continuous-600w-1356350777.jpg"/>
