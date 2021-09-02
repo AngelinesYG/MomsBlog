@@ -1,4 +1,60 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
+
+## Moms Blog 
+# Description 
+  Practicing learning Gatsby, GraphQL, and Contentful by building a small re-make of a previous project intended for moms to vent about their experiences as moms by blogging about it. 
+
+1.  **Initial build and setup.**
+    The initial set up was somewhat challenging. Though I followed the tutorial step by step, there was something wrong with the version and the way gatsby was installed on my machine. I kept encountering EACCESS errors for any and every function I performed. Including a simple save of a file or install of a package. 
+
+    To try to fix this I google several different solutions, including changing computer permissions, changing root to user, etc. But nothing worked. For the duration of the project I had to simply "sudo" before running any commands in terminal, even just simply saving a file. As long as I was able to "sudo", the rest of the project fell into place. 
+2.  **Problems/bugs encountered.**
+    Aside from the EACCESS problem, there was a huge problem with creating pages due to changes and compatability in different versions of node, npm, gatsby, and several of the plugins installed. There seemed to have been a change in how pages are created and that caused a plethora of errors that remain unresolved a this time. 
+3.  **Approact to fixing problems/bugs.**
+    I googled the errors specifically by copying and pasting them into google search. I found several different solutions for both the EACCESS error and the creating pages error. That is where I learned to change my computer's permissions and downgrade several packages and versions of node/npm. However, none of these worked. The documentation and other articles seemed to also be a little outdated and none of the suggested solutions worked. 
+
+    For the EACCESS error I simply resorted to solve that (or get around it) by typing 'sudo' before every terminal command and to save/create files. 
+
+    For the pages error I tried several different things. As mentioned above, I tried downgrading packages and versions. I tried moving the file from 'templates' to 'pages' which seemed to have gotten rid of the error, but did not fix it. I tried adjusting the query (though it worked in graphql), but that still did not work. In order to temporarily fix the creating new pages issue, I simply hardcoded the blogs into the file and linked to that file as a new page. 
+
+    Another major error was getting the application deployed to Netlify. For the same reasons. The outdated or not compatable versions of packages and plugins. To solve this I, again, googled the error and found that I could and should specify the versions in Netlify using environmental variables. Additionally, for some reason, it did not like a empty file I had and once I added the variable and got rid of the file, it deployed without issues. 
+
+    These are the articles/documentation I looked at: 
+    **Gatsby Tutorial Generating Pages**
+    https://www.youtube.com/watch?v=L32Vx_bEZhA 
+    https://www.youtube.com/results?search_query=creating+dynamic+pages+gatsby+using+slug+method 
+    **Node.js and npm Docs**
+    https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+    **Gatsby Docs**
+    https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#introduction 
+    https://www.gatsbyjs.com/docs/add-page-metadata/ 
+    https://www.gatsbyjs.com/docs/how-to/querying-data/static-query/ 
+    https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/ 
+    
+
+    **Other Related Docs**
+    https://spectrum.chat/gatsby-js/general/the-graphql-query-in-the-non-page-component-will-not-be-run~c8d84104-bda5-486f-a6bd-b121f4ffcfe7
+    https://github.com/eggheadio/gatsby-starter-egghead-blog/blob/master/gatsby-node.js 
+    https://github.com/gatsbyjs/gatsby/issues/25293 
+    https://dev.to/megfh/what-i-learned-from-the-100daysofgatbsy-challenge-4p70 
+    https://stackoverflow.com/questions/67115732/error-cannot-find-module-gatsby-plugin-image-graphql-utils 
+    https://ittone.ma/ittone/node-js-netlify-deploy-error-cannot-find-module-gatsby-plugin-image-graphql-utils/
+    https://answers.netlify.com/t/netlify-noob-minified-react-error-130/3032 
+    https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/deploying-to-netlify 
+
+    **Node.js and npm Docs**
+    **Node.js and npm Docs**
+    **Node.js and npm Docs**
+    **Node.js and npm Docs**
+
+
+4.  **What went well.**
+    What went well was the fact that Gatsby seemed pretty simple and aside from those two errors, everything else went very smoothly. The regular pages were created with no problem and I was even able to add emojis. I liked learning the new technoligies and GraphQL and Contentful were also pretty simple to understand. 
+
+5.  **Future Improvements.**
+    Future improvements would be to do some more research into how pages are created with the new versions and try to get them incorporated. 
+    Another improvement would be to make the app more the way it's intended and add authentication so that mothers can actually got and write their blogs. 
+
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
